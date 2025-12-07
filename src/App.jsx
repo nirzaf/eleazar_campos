@@ -11,7 +11,7 @@ export default function App() {
     <>
       <header>
         <nav>
-          <div className="logo">Chef | Eleazar Campo</div>
+          <div className="logo">👨‍🍳 Eleazar Campo</div>
           <button
             className="menu-toggle"
             aria-label="Toggle navigation"
@@ -30,6 +30,9 @@ export default function App() {
           </ul>
         </nav>
       </header>
+      {isMenuOpen && (
+        <div className="nav-backdrop" onClick={() => setIsMenuOpen(false)} />
+      )}
 
       <section className="hero">
         <div className="hero-content">
