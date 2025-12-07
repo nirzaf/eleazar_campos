@@ -1,13 +1,18 @@
 import React from 'react'
 import './App.css'
 import profileImg from '../profile.png'
+import { 
+  Briefcase, MapPin, ChefHat, Users, Globe, Award, ShieldCheck, 
+  UtensilsCrossed, Flame, TrendingUp, MessageCircleHeart, 
+  Mail, Phone, Linkedin, CalendarDays, ScrollText
+} from 'lucide-react'
 
 const stats = [
-  { label: 'Experience', value: '10+ yrs' },
-  { label: 'Chefs led', value: '10' },
-  { label: 'Countries worked', value: '4' },
-  { label: 'Certifications', value: '11+' },
-  { label: 'HACCP compliance', value: '100%' }
+  { label: 'Experience', value: '10+ yrs', icon: <CalendarDays size={20} /> },
+  { label: 'Chefs led', value: '10', icon: <Users size={20} /> },
+  { label: 'Countries worked', value: '4', icon: <Globe size={20} /> },
+  { label: 'Certifications', value: '11+', icon: <Award size={20} /> },
+  { label: 'HACCP compliance', value: '100%', icon: <ShieldCheck size={20} /> }
 ]
 
 const experiences = [
@@ -78,6 +83,7 @@ const experiences = [
 const skills = [
   {
     title: 'Kitchen Leadership',
+    icon: <ChefHat size={24} />,
     items: [
       'Crew training & coaching',
       'Roster planning',
@@ -88,6 +94,7 @@ const skills = [
   },
   {
     title: 'Menu & Operations',
+    icon: <UtensilsCrossed size={24} />,
     items: [
       'Menu engineering',
       'Prep standards',
@@ -99,6 +106,7 @@ const skills = [
   },
   {
     title: 'Food Safety',
+    icon: <ShieldCheck size={24} />,
     items: [
       'HACCP programs',
       'Daily line checks',
@@ -109,6 +117,7 @@ const skills = [
   },
   {
     title: 'Culinary Strengths',
+    icon: <Flame size={24} />,
     items: [
       'Pan-Asian flavor balance',
       'Sauce and marinade builds',
@@ -119,6 +128,7 @@ const skills = [
   },
   {
     title: 'Business Acumen',
+    icon: <TrendingUp size={24} />,
     items: [
       'Food cost targets',
       'Budget adherence',
@@ -128,6 +138,7 @@ const skills = [
   },
   {
     title: 'Soft Skills',
+    icon: <MessageCircleHeart size={24} />,
     items: [
       'Guest focus',
       'Clear communication',
@@ -169,10 +180,10 @@ const certifications = [
 ]
 
 const contacts = [
-  { label: 'Email', value: 'eleazaracampo@gmail.com', href: 'mailto:eleazaracampo@gmail.com' },
-  { label: 'Phone', value: '+974 6652 6981', href: 'tel:+97466526981' },
-  { label: 'Location', value: 'Abu Hamour, Doha, Qatar' },
-  { label: 'LinkedIn', value: 'linkedin.com/in/eleazaracampo', href: 'https://linkedin.com/in/eleazaracampo' }
+  { label: 'Email', value: 'eleazaracampo@gmail.com', href: 'mailto:eleazaracampo@gmail.com', icon: <Mail size={20} /> },
+  { label: 'Phone', value: '+974 6652 6981', href: 'tel:+97466526981', icon: <Phone size={20} /> },
+  { label: 'Location', value: 'Abu Hamour, Doha, Qatar', icon: <MapPin size={20} /> },
+  { label: 'LinkedIn', value: 'linkedin.com/in/eleazaracampo', href: 'https://linkedin.com/in/eleazaracampo', icon: <Linkedin size={20} /> }
 ]
 
 export default function App() {
@@ -187,8 +198,12 @@ export default function App() {
           </div>
         </div>
         <div className="top-actions">
-          <a className="button ghost sm" href="#contact">Contact</a>
-          <a className="button primary sm" href="#experience">Experience</a>
+          <a className="button ghost sm" href="#contact">
+            <Mail size={16} className="btn-icon" /> Contact
+          </a>
+          <a className="button primary sm" href="#experience">
+            <ScrollText size={16} className="btn-icon" /> Experience
+          </a>
         </div>
       </header>
 
@@ -202,9 +217,15 @@ export default function App() {
                 <h1 id="hero-title">Eleazar Campo</h1>
                 <p className="hero-title">Head Chef | Pan-Asian Culinary Expert</p>
                 <div className="tag-row">
-                  <span className="tag">Based in Doha, Qatar</span>
-                  <span className="tag">Open to new roles</span>
-                  <span className="tag">Service & operations first</span>
+                  <span className="tag">
+                    <MapPin size={14} className="tag-icon" /> Based in Doha, Qatar
+                  </span>
+                  <span className="tag">
+                    <Briefcase size={14} className="tag-icon" /> Open to new roles
+                  </span>
+                  <span className="tag">
+                    <ChefHat size={14} className="tag-icon" /> Service & operations first
+                  </span>
                 </div>
               </div>
             </div>
@@ -213,8 +234,12 @@ export default function App() {
               hit food cost, safety, and guest satisfaction targets.
             </p>
             <div className="hero-actions">
-              <a className="button primary" href="#contact">Book a call</a>
-              <a className="button ghost" href="#about">About & strengths</a>
+              <a className="button primary" href="#contact">
+                <Phone size={18} className="btn-icon" /> Book a call
+              </a>
+              <a className="button ghost" href="#about">
+                <ChefHat size={18} className="btn-icon" /> About & strengths
+              </a>
             </div>
           </div>
         </section>
@@ -227,6 +252,7 @@ export default function App() {
           <div className="stat-scroll" role="list">
             {stats.map(item => (
               <div className="stat-card" key={item.label} role="listitem">
+                <div className="stat-icon-wrapper">{item.icon}</div>
                 <div className="stat-value">{item.value}</div>
                 <div className="stat-label">{item.label}</div>
               </div>
@@ -300,7 +326,10 @@ export default function App() {
           <div className="grid">
             {skills.map(group => (
               <div className="card" key={group.title}>
-                <h3>{group.title}</h3>
+                <div className="skill-header">
+                  <div className="skill-icon">{group.icon}</div>
+                  <h3>{group.title}</h3>
+                </div>
                 <div className="pill-grid">
                   {group.items.map(item => (
                     <span className="pill" key={item}>{item}</span>
@@ -340,7 +369,9 @@ export default function App() {
           </div>
           <div className="pill-grid">
             {certifications.map(cert => (
-              <span className="pill" key={cert}>{cert}</span>
+              <span className="pill" key={cert}>
+                <Award size={14} className="pill-icon" /> {cert}
+              </span>
             ))}
           </div>
         </section>
@@ -354,20 +385,27 @@ export default function App() {
             <div className="contact-grid">
               {contacts.map(item => (
                 <div className="contact-item" key={item.label}>
-                  <p className="kicker">{item.label}</p>
-                  {item.href ? (
-                    <a href={item.href} target={item.label === 'LinkedIn' ? '_blank' : undefined} rel="noreferrer">
-                      {item.value}
-                    </a>
-                  ) : (
-                    <p>{item.value}</p>
-                  )}
+                  <div className="contact-icon-wrapper">{item.icon}</div>
+                  <div>
+                    <p className="kicker">{item.label}</p>
+                    {item.href ? (
+                      <a href={item.href} target={item.label === 'LinkedIn' ? '_blank' : undefined} rel="noreferrer">
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="contact-value">{item.value}</p>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
             <div className="contact-actions">
-              <a className="button primary" href="mailto:eleazaracampo@gmail.com">Email Eleazar</a>
-              <a className="button ghost" href="tel:+97466526981">Call now</a>
+              <a className="button primary" href="mailto:eleazaracampo@gmail.com">
+                <Mail size={18} className="btn-icon" /> Email Eleazar
+              </a>
+              <a className="button ghost" href="tel:+97466526981">
+                <Phone size={18} className="btn-icon" /> Call now
+              </a>
             </div>
           </div>
         </section>
