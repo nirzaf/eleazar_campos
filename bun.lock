@@ -5,6 +5,7 @@
     "": {
       "name": "eleazar_campos",
       "dependencies": {
+        "lucide-react": "^0.556.0",
         "preact": "^10.28.0",
         "react": "^19.2.1",
         "react-dom": "^19.2.1",
@@ -179,6 +180,8 @@
     "fsevents": ["fsevents@2.3.3", "", { "os": "darwin" }, "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw=="],
 
     "imagetools-core": ["imagetools-core@9.1.0", "", {}, "sha512-xQjs+2vrxLnAjCq+omuNkd5UQTld9/bP8+YT0LyYTlKfuSQtgUBvqhUwGugzSAh6sCdN+LnROMuLswn5hZ9Fhg=="],
+
+    "lucide-react": ["lucide-react@0.556.0", "", { "peerDependencies": { "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0" } }, "sha512-iOb8dRk7kLaYBZhR2VlV1CeJGxChBgUthpSP8wom9jfj79qovgG6qcSdiy6vkoREKPnbUYzJsCn4o4PtG3Iy+A=="],
 
     "nanoid": ["nanoid@3.3.11", "", { "bin": "bin/nanoid.cjs" }, "sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w=="],
 
