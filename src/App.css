@@ -5,7 +5,11 @@
     --text-dark: #1b130a;
     --text-light: #3e3529;
     --border-color: #e2d9cb;
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Lato', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
 }
+
+html { scroll-behavior: smooth; }
 
 * {
     margin: 0;
@@ -14,7 +18,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--body-font);
     line-height: 1.7;
     color: var(--text-dark);
     background-color: #fffaf3;
@@ -31,6 +35,10 @@ header {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+.logo { font-family: var(--heading-font); }
+
+h1, h2, h3, h4 { font-family: var(--heading-font); }
+
 nav {
     max-width: 1200px;
     margin: 0 auto;
@@ -46,7 +54,7 @@ nav {
     color: var(--accent-color);
 }
 
-nav ul {
+.nav-links {
     display: flex;
     list-style: none;
     gap: 30px;
@@ -156,6 +164,7 @@ nav a:hover {
 
 section {
     padding: 80px 20px;
+    scroll-margin-top: 90px;
 }
 
 section h2 {
@@ -331,16 +340,16 @@ section h2::after {
     font-weight: 700;
 }
 
-.skill-category ul { list-style: none; }
+.skill-category ul { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
 
 .skill-category li {
-    padding: 8px 0;
     color: var(--text-dark);
-    font-size: 15px;
-    border-bottom: 1px solid var(--border-color);
+    font-size: 14px;
+    background-color: var(--light-bg);
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
 }
-
-.skill-category li:last-child { border-bottom: none; }
 
 #education { background-color: white; }
 
@@ -443,7 +452,9 @@ footer {
 }
 
 @media (max-width: 768px) {
-    nav ul { flex-direction: column; gap: 15px; }
+    .menu-toggle { display: block; background: transparent; border: 1px solid var(--accent-color); color: var(--accent-color); padding: 8px 12px; border-radius: 4px; font-size: 18px; }
+    .nav-links { position: absolute; top: 64px; left: 0; right: 0; background: #1a1410; flex-direction: column; gap: 15px; padding: 20px; display: none; border-bottom: 1px solid var(--accent-color); }
+    .nav-links.active { display: flex; }
     .hero h1 { font-size: 32px; }
     .hero .title { font-size: 18px; }
     .cta-buttons { flex-direction: column; }
@@ -469,3 +480,9 @@ section { animation: fadeIn 0.6s ease-out; }
 .mt-30 { margin-top: 30px; }
 .lead-text { font-size: 18px; margin-bottom: 40px; color: #e8e8e8; }
 .fine-print { margin-top: 50px; color: #e6dfd4; font-size: 14px; }
+.btn:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
+.btn:active { transform: translateY(0); box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+
+.menu-toggle { display: none; }
+
+body.menu-open { overflow: hidden; }

@@ -11,7 +11,7 @@ export default function App() {
     <>
       <header>
         <nav>
-          <div className="logo">👨‍🍳 Eleazar Campo</div>
+          <div className="logo">Chef | Eleazar Campo</div>
           <button
             className="menu-toggle"
             aria-label="Toggle navigation"
