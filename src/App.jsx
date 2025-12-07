@@ -1,20 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 import profileImg from '../profile.png'
 
 export default function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  useEffect(() => {
+    document.body.classList.toggle('menu-open', isMenuOpen)
+  }, [isMenuOpen])
   return (
     <>
       <header>
         <nav>
           <div className="logo">👨‍🍳 Eleazar Campo</div>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#contact">Contact</a></li>
+          <button
+            className="menu-toggle"
+            aria-label="Toggle navigation"
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen(v => !v)}
+          >
+            ☰
+          </button>
+          <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+            <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About</a></li>
+            <li><a href="#experience" onClick={() => setIsMenuOpen(false)}>Experience</a></li>
+            <li><a href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</a></li>
+            <li><a href="#education" onClick={() => setIsMenuOpen(false)}>Education</a></li>
+            <li><a href="#certifications" onClick={() => setIsMenuOpen(false)}>Certifications</a></li>
+            <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
           </ul>
         </nav>
       </header>

@@ -206,11 +206,12 @@ section h2::after {
     padding: 12px 0;
     padding-left: 30px;
     position: relative;
-    color: var(--text-light);
+    color: var(--text-dark);
+    font-size: 15px;
 }
 
 .strengths li::before {
-    content: '✓';
+    content: '•';
     position: absolute;
     left: 0;
     color: var(--accent-color);
@@ -242,8 +243,9 @@ section h2::after {
 
 .stat-label {
     color: var(--text-light);
-    font-size: 14px;
+    font-size: 15px;
     margin-top: 10px;
+    font-weight: 600;
 }
 
 #experience { background-color: white; }
@@ -277,14 +279,15 @@ section h2::after {
 
 .date-location {
     color: var(--text-light);
-    font-size: 14px;
+    font-size: 15px;
     font-style: italic;
 }
 
 .experience-description {
-    color: var(--text-light);
-    line-height: 1.8;
+    color: var(--text-dark);
+    line-height: 1.9;
     margin-bottom: 15px;
+    font-size: 16px;
 }
 
 .achievements { list-style: none; margin-top: 15px; }
@@ -293,12 +296,12 @@ section h2::after {
     padding: 8px 0;
     padding-left: 25px;
     position: relative;
-    color: var(--text-light);
+    color: var(--text-dark);
     font-size: 15px;
 }
 
 .achievements li::before {
-    content: '▸';
+    content: '•';
     position: absolute;
     left: 0;
     color: var(--accent-color);
@@ -332,7 +335,7 @@ section h2::after {
 
 .skill-category li {
     padding: 8px 0;
-    color: var(--text-light);
+    color: var(--text-dark);
     font-size: 15px;
     border-bottom: 1px solid var(--border-color);
 }
@@ -369,8 +372,8 @@ section h2::after {
 }
 
 .education-item p {
-    color: var(--text-light);
-    line-height: 1.6;
+    color: var(--text-dark);
+    line-height: 1.75;
 }
 
 #certifications { background-color: var(--light-bg); }
@@ -399,7 +402,7 @@ section h2::after {
 
 .cert-issuer {
     color: var(--text-light);
-    font-size: 13px;
+    font-size: 14px;
 }
 
 #contact {
@@ -425,7 +428,7 @@ section h2::after {
 
 .contact-item p {
     font-size: 16px;
-    color: #e8e8e8;
+    color: #f6efe5;
 }
 
 .contact-item a { color: var(--accent-color); text-decoration: none; }
@@ -433,7 +436,7 @@ section h2::after {
 
 footer {
     background: #1a1410;
-    color: #999;
+    color: #e6dfd4;
     text-align: center;
     padding: 30px 20px;
     border-top: 2px solid var(--accent-color);
@@ -465,4 +468,4 @@ section { animation: fadeIn 0.6s ease-out; }
 
 .mt-30 { margin-top: 30px; }
 .lead-text { font-size: 18px; margin-bottom: 40px; color: #e8e8e8; }
-.fine-print { margin-top: 50px; color: #999; font-size: 14px; }
+.fine-print { margin-top: 50px; color: #e6dfd4; font-size: 14px; }
