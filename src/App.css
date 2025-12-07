@@ -8,6 +8,7 @@
     --heading-font: 'Playfair Display', serif;
     --body-font: 'Lato', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
     --header-height: 64px;
+    --text-on-dark: #fffaf3;
 }
 
 html { scroll-behavior: smooth; }
@@ -24,6 +25,9 @@ body {
     color: var(--text-dark);
     background-color: #fffaf3;
     letter-spacing: 0.1px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 header {
@@ -62,7 +66,7 @@ nav {
 }
 
 nav a {
-    color: #f8f5ef;
+    color: var(--text-on-dark);
     text-decoration: none;
     transition: color 0.3s;
     font-size: 15px;
@@ -111,10 +115,10 @@ nav a:hover {
 
 .hero p {
     font-size: 18px;
-    line-height: 1.8;
+    line-height: 1.9;
     margin-bottom: 30px;
-    color: #f2ede2;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    color: var(--text-on-dark);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .cta-buttons {
@@ -205,7 +209,7 @@ section h2::after {
 
 .about-text p {
     font-size: 16px;
-    line-height: 1.85;
+    line-height: 1.9;
     margin-bottom: 20px;
     color: var(--text-dark);
 }
@@ -221,7 +225,7 @@ section h2::after {
 }
 
 .strengths li::before {
-    content: '•';
+    content: '-';
     position: absolute;
     left: 0;
     color: var(--accent-color);
@@ -295,9 +299,10 @@ section h2::after {
 
 .experience-description {
     color: var(--text-dark);
-    line-height: 1.9;
+    line-height: 1.95;
     margin-bottom: 15px;
     font-size: 16px;
+    max-width: 80ch;
 }
 
 .achievements { list-style: none; margin-top: 15px; }
@@ -311,7 +316,7 @@ section h2::after {
 }
 
 .achievements li::before {
-    content: '•';
+    content: '-';
     position: absolute;
     left: 0;
     color: var(--accent-color);
@@ -345,7 +350,7 @@ section h2::after {
 
 .skill-category li {
     color: var(--text-dark);
-    font-size: 14px;
+    font-size: 15px;
     background-color: var(--light-bg);
     padding: 5px 12px;
     border-radius: 20px;
@@ -412,7 +417,7 @@ section h2::after {
 
 .cert-issuer {
     color: var(--text-light);
-    font-size: 14px;
+    font-size: 15px;
 }
 
 #contact {
@@ -442,7 +447,9 @@ section h2::after {
 }
 
 .contact-item a { color: var(--accent-color); text-decoration: none; }
-.contact-item a:hover { text-decoration: underline; }
+.contact-item a:hover { text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 2px; }
+
+a:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 3px; border-radius: 3px; }
 
 footer {
     background: #1a1410;
@@ -499,9 +506,10 @@ body.menu-open { overflow: hidden; }
     .container { padding: 0 16px; }
     section { padding: 40px 16px; }
     .profile-photo { width: 120px; height: 120px; }
-    .hero h1 { font-size: 26px; }
+    .hero h1 { font-size: 26px; line-height: 1.25; }
     .hero .title { font-size: 16px; }
-    .lead-text { font-size: 16px; }
+    .lead-text { font-size: 16px; line-height: 1.6; }
+    .about-text p, .education-item p, .experience-description { font-size: 15.5px; }
     .btn { padding: 12px 20px; font-size: 15px; }
     .stats { grid-template-columns: 1fr; gap: 20px; }
     .skills-grid { grid-template-columns: 1fr; gap: 20px; }

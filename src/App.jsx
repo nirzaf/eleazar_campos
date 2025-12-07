@@ -11,14 +11,14 @@ export default function App() {
     <>
       <header>
         <nav>
-          <div className="logo">👨‍🍳 Eleazar Campo</div>
+          <div className="logo">Chef | Eleazar Campo</div>
           <button
             className="menu-toggle"
             aria-label="Toggle navigation"
             aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen(v => !v)}
           >
-            ☰
+            Menu
           </button>
           <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
             <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About</a></li>
@@ -36,7 +36,7 @@ export default function App() {
 
       <section className="hero">
         <div className="hero-content">
-          <img src={profileImg} alt="Eleazar Campo" className="profile-photo" />
+          <img src={profileImg} alt="Eleazar Campo" className="profile-photo" width="160" height="160" decoding="async" fetchpriority="high" />
           <h1>Eleazar Campo</h1>
           <div className="title">Head Chef | Pan-Asian Culinary Expert | Kitchen Operations Leader</div>
           <p>Passionate culinary professional with 10+ years of progressive experience in high-volume kitchen operations, menu development, and culinary team leadership. Currently leading BAO Pan Asian Restaurant in Doha, Qatar.</p>
@@ -189,7 +189,7 @@ export default function App() {
           <h2>Core Competencies</h2>
           <div className="skills-grid">
             <div className="skill-category">
-              <h4>🍳 Culinary Skills</h4>
+              <h4>Culinary Skills</h4>
               <ul>
                 <li>Pan-Asian Cuisine (Specialty)</li>
                 <li>Menu Development &amp; Innovation</li>
@@ -202,7 +202,7 @@ export default function App() {
             </div>
 
             <div className="skill-category">
-              <h4>⚙️ Operations</h4>
+              <h4>Operations</h4>
               <ul>
                 <li>Kitchen Operations Management</li>
                 <li>Workflow Optimization</li>
@@ -215,7 +215,7 @@ export default function App() {
             </div>
 
             <div className="skill-category">
-              <h4>🛡️ Food Safety</h4>
+              <h4>Food Safety</h4>
               <ul>
                 <li>HACCP Implementation</li>
                 <li>Food Safety Standards</li>
@@ -228,7 +228,7 @@ export default function App() {
             </div>
 
             <div className="skill-category">
-              <h4>👥 Leadership</h4>
+              <h4>Leadership</h4>
               <ul>
                 <li>Kitchen Team Leadership</li>
                 <li>Staff Training &amp; Development</li>
@@ -241,7 +241,7 @@ export default function App() {
             </div>
 
             <div className="skill-category">
-              <h4>💼 Business Skills</h4>
+              <h4>Business Skills</h4>
               <ul>
                 <li>Budget Planning</li>
                 <li>Cost Optimization</li>
@@ -254,7 +254,7 @@ export default function App() {
             </div>
 
             <div className="skill-category">
-              <h4>🗣️ Soft Skills</h4>
+              <h4>Soft Skills</h4>
               <ul>
                 <li>Written Communication</li>
                 <li>Verbal Communication</li>
@@ -349,19 +349,19 @@ export default function App() {
 
           <div className="contact-info">
             <div className="contact-item">
-              <h4>📧 Email</h4>
+              <h4>Email</h4>
               <p><a href="mailto:eleazaracampo@gmail.com">eleazaracampo@gmail.com</a></p>
             </div>
             <div className="contact-item">
-              <h4>📱 Phone</h4>
+              <h4>Phone</h4>
               <p><a href="tel:+97466526981">+974 6652 6981</a></p>
             </div>
             <div className="contact-item">
-              <h4>📍 Location</h4>
+              <h4>Location</h4>
               <p>Abu Hamour, Doha, Qatar</p>
             </div>
             <div className="contact-item">
-              <h4>🔗 LinkedIn</h4>
+              <h4>LinkedIn</h4>
               <p><a href="https://linkedin.com/in/eleazaracampo" target="_blank" rel="noreferrer">linkedin.com/in/eleazaracampo</a></p>
             </div>
           </div>
