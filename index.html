@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleazar Campo - Head Chef | Pan-Asian Culinary Expert</title>
+    <style>
+        :root {
+            --primary-color: #2d2416;
+            --accent-color: #c4a574;
+            --light-bg: #f5f1ed;
+            --text-dark: #2d2416;
+            --text-light: #666;
+            --border-color: #e0d5c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a1410 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #3d3428 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .profile-photo {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero .title {
+            font-size: 24px;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #e8e8e8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #d4b896;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 20px;
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 50px;
+            text-align: center;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        /* About Section */
+        #about {
+            background-color: var(--light-bg);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .strengths {
+            list-style: none;
+        }
+
+        .strengths li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .strengths li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Experience Section */
+        #experience {
+            background-color: white;
+        }
+
+        .experience-item {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .job-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .company {
+            font-size: 18px;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .date-location {
+            color: var(--text-light);
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .experience-description {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .achievements {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .achievements li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        .achievements li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* Skills Section */
+        #skills {
+            background-color: var(--light-bg);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .skill-category h4 {
+            font-size: 18px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 8px 0;
+            color: var(--text-light);
+            font-size: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+
+        /* Education Section */
+        #education {
+            background-color: white;
+        }
+
+        .education-item {
+            background: var(--light-bg);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .education-item h4 {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .school {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .education-date {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .education-item p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Certifications Section */
+        #certifications {
+            background-color: var(--light-bg);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-top: 3px solid var(--accent-color);
+        }
+
+        .cert-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .cert-issuer {
+            color: var(--text-light);
+            font-size: 13px;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #3d3428 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .contact-item {
+            padding: 20px;
+        }
+
+        .contact-item h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .contact-item p {
+            font-size: 16px;
+            color: #e8e8e8;
+        }
+
+        .contact-item a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1410;
+            color: #999;
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 2px solid var(--accent-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero .title {
+                font-size: 18px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+
+            section h2 {
+                font-size: 28px;
+            }
+
+            .experience-header {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .stat {
+            transition: all 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        }
+
+        .skill-category, .education-item {
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover, .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">👨‍🍳 Eleazar Campo</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="profile.png" alt="Eleazar Campo" class="profile-photo">
+            <h1>Eleazar Campo</h1>
+            <div class="title">Head Chef | Pan-Asian Culinary Expert | Kitchen Operations Leader</div>
+            <p>Passionate culinary professional with 10+ years of progressive experience in high-volume kitchen operations, menu development, and culinary team leadership. Currently leading BAO Pan Asian Restaurant in Doha, Qatar.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                <a href="#experience" class="btn btn-secondary">View Experience</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div>
+                    <h3>Culinary Excellence & Leadership</h3>
+                    <p>I am a results-driven Head Chef with over a decade of progressive culinary experience. Currently leading all culinary operations at BAO Pan Asian Restaurant in Doha, I combine extensive technical expertise with proven leadership capabilities to drive kitchen excellence and memorable dining experiences.</p>
+                    <p>My journey from Line Cook to Head Chef demonstrates consistent commitment to culinary innovation, operational mastery, and professional growth. I specialize in Pan-Asian cuisine while maintaining flexibility to work with diverse international culinary traditions.</p>
+                    <h3 style="margin-top: 30px;">Key Strengths</h3>
+                    <ul class="strengths">
+                        <li>Kitchen Operations & Workflow Management</li>
+                        <li>Menu Development & Menu Costing</li>
+                        <li>Food Safety, HACCP & WHS Compliance</li>
+                        <li>Inventory, Budgeting & Cost Control</li>
+                        <li>Leadership, Staff Training & Roster Management</li>
+                        <li>Quality Assurance & Waste Reduction</li>
+                        <li>Vendor Relations & Procurement</li>
+                        <li>Cross-Cultural Team Collaboration</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Years of Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">10</div>
+                            <div class="stat-label">Team Members Led</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">6</div>
+                            <div class="stat-label">Years as Sous Chef</div>
+                        </div>
+                    </div>
+                    <div class="stats" style="margin-top: 30px;">
+                        <div class="stat">
+                            <div class="stat-number">11+</div>
+                            <div class="stat-label">Certifications</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Countries</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">HACCP Compliance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="job-title">Head Chef</div>
+                        <div class="company">BAO Pan Asian Restaurant</div>
+                        <div class="date-location">May 2025 - Present | Doha, Qatar</div>
+                    </div>
+                </div>
+                <p class="experience-description">Leading all culinary operations for a high-volume, specialized Pan-Asian dining concept. Overseeing kitchen operations, menu development, food cost controls, and team leadership of 10 culinary professionals.</p>
+                <ul class="achievements">
+                    <li>Manage kitchen operations and maintain exceptional food quality standards</li>
+                    <li>Lead and mentor team of 10 culinary professionals across multiple stations</li>
+                    <li>Develop and update menus aligned with market trends and customer preferences</li>
+                    <li>Implement food cost controls achieving consistent budget targets</li>
+                    <li>Maintain strict HACCP compliance and sanitation standards</li>
+                    <li>Foster high-performance kitchen culture focused on consistency and innovation</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="job-title">Sous Chef</div>
+                        <div class="company">BAO Pan Asian Restaurant</div>
+                        <div class="date-location">August 2019 - April 2025 (Nearly 6 years) | Doha, Qatar</div>
+                    </div>
+                </div>
+                <p class="experience-description">Served as second-in-command, directly supporting Head Chef operations and demonstrating progressive leadership capabilities in daily kitchen management.</p>
+                <ul class="achievements">
+                    <li>Assisted Head Chef in daily kitchen operations and menu planning</li>
+                    <li>Trained, supervised, and evaluated junior chefs on proper techniques</li>
+                    <li>Coordinated with front-of-house management for seamless service</li>
+                    <li>Implemented food safety and hygiene protocols</li>
+                    <li>Reduced food waste through improved storage and portion control</li>
+                    <li>Assumed Head Chef responsibilities during absence</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="job-title">Line Cook (Opening Team Trainer)</div>
+                        <div class="company">Peri-Peri Charcoal Chicken & Sauce Bar</div>
+                        <div class="date-location">October 2018 - May 2019 | Makati City, Philippines</div>
+                    </div>
+                </div>
+                <p class="experience-description">Contributed to successful launch of multiple new restaurant branches through hands-on training, station setup, and operational support.</p>
+                <ul class="achievements">
+                    <li>Supported opening and launch of multiple restaurant branches</li>
+                    <li>Trained opening team members on preparation techniques and standards</li>
+                    <li>Ensured compliance with food safety standards during launch phase</li>
+                    <li>Gained Train the Trainers certification for staff development</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="job-title">Line Cook</div>
+                        <div class="company">Peri-Peri Charcoal Chicken & Sauce Bar</div>
+                        <div class="date-location">October 2016 - September 2018 | Makati City, Philippines</div>
+                    </div>
+                </div>
+                <p class="experience-description">Gained foundational expertise in fast-casual dining operations and high-volume food preparation in specialized cuisine concept.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="job-title">Line Cook</div>
+                        <div class="company">Chef Mo's Ribhouse</div>
+                        <div class="date-location">August 2015 - October 2016 | Quezon City, Philippines</div>
+                    </div>
+                </div>
+                <p class="experience-description">Built core culinary competencies in BBQ and grilled cuisine preparation, developing expertise in smoking techniques and meat handling.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>🍳 Culinary Skills</h4>
+                    <ul>
+                        <li>Pan-Asian Cuisine (Specialty)</li>
+                        <li>Menu Development & Innovation</li>
+                        <li>Advanced Cooking Techniques</li>
+                        <li>Plating & Presentation</li>
+                        <li>Recipe Development</li>
+                        <li>Food Costing & Menu Engineering</li>
+                        <li>Diverse International Cuisines</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>⚙️ Operations</h4>
+                    <ul>
+                        <li>Kitchen Operations Management</li>
+                        <li>Workflow Optimization</li>
+                        <li>Inventory Management</li>
+                        <li>Food Cost Control</li>
+                        <li>Budget Management</li>
+                        <li>Supplier Coordination</li>
+                        <li>Quality Assurance</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>🛡️ Food Safety</h4>
+                    <ul>
+                        <li>HACCP Implementation</li>
+                        <li>Food Safety Standards</li>
+                        <li>Sanitation & Hygiene</li>
+                        <li>WHS Compliance</li>
+                        <li>Health Inspection Standards</li>
+                        <li>Staff Safety Training</li>
+                        <li>Waste Management</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>👥 Leadership</h4>
+                    <ul>
+                        <li>Kitchen Team Leadership</li>
+                        <li>Staff Training & Development</li>
+                        <li>Performance Management</li>
+                        <li>Roster Management</li>
+                        <li>Team Motivation</li>
+                        <li>Conflict Resolution</li>
+                        <li>Mentoring & Coaching</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>💼 Business Skills</h4>
+                    <ul>
+                        <li>Budget Planning</li>
+                        <li>Cost Optimization</li>
+                        <li>Inventory Forecasting</li>
+                        <li>Financial Management</li>
+                        <li>Strategic Planning</li>
+                        <li>Problem-Solving</li>
+                        <li>Time Management</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>🗣️ Soft Skills</h4>
+                    <ul>
+                        <li>Written Communication</li>
+                        <li>Verbal Communication</li>
+                        <li>Active Listening</li>
+                        <li>Stakeholder Management</li>
+                        <li>Team Collaboration</li>
+                        <li>Customer Service</li>
+                        <li>Presentation Skills</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>Education & Professional Development</h2>
+
+            <div class="education-item">
+                <h4>Bachelor of Science: International Hospitality Management</h4>
+                <div class="school">Lyceum of the Philippines University | Batangas, Philippines</div>
+                <div class="education-date">August 2024 - Expected Completion: 2026</div>
+                <p><strong>Specialization:</strong> Culinary Arts and Kitchen Operations</p>
+                <p>Online program allowing continuation of full-time work while advancing professional education in hospitality management.</p>
+            </div>
+
+            <div class="education-item">
+                <h4>Associate Degree: Hotel and Restaurant Management</h4>
+                <div class="school">City University of Pasay | Pasay City, Metro Manila, Philippines</div>
+                <div class="education-date">April 2012 - Completed</div>
+                <p>Strong foundational knowledge in hospitality operations, service standards, and industry best practices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <h2>Professional Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <div class="cert-title">Food Handler Certification</div>
+                    <div class="cert-issuer">Qatar Chamber of Commerce & Industry (2025)</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Train the Trainers & Coaching 101</div>
+                    <div class="cert-issuer">Foods Group Inc. (2019)</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Food Safety Strategies</div>
+                    <div class="cert-issuer">Palm Nouveau School of Hospitality (2011)</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Basic Occupational Safety & Health</div>
+                    <div class="cert-issuer">Foods Group Inc. (2018)</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Food Safety Refresher</div>
+                    <div class="cert-issuer">Foods Group Inc. (2018)</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Customer Service Excellence</div>
+                    <div class="cert-issuer">Palm Nouveau School (2011)</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">5-in-1 Hospitality Competency</div>
+                    <div class="cert-issuer">JARWEB Sights Consultancy (2011)</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Dispatcher Program</div>
+                    <div class="cert-issuer">Foods Group Inc. (2018)</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Basic Housekeeping SOP</div>
+                    <div class="cert-issuer">Palm Nouveau School (2011)</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Bartending Skills</div>
+                    <div class="cert-issuer">Palm Nouveau School (2011)</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Sequence of Service</div>
+                    <div class="cert-issuer">Palm Nouveau School (2011)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p style="font-size: 18px; margin-bottom: 40px; color: #e8e8e8;">Interested in discussing culinary opportunities? Let's connect!</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>📧 Email</h4>
+                    <p><a href="mailto:eleazaracampo@gmail.com">eleazaracampo@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>📱 Phone</h4>
+                    <p><a href="tel:+97466526981">+974 6652 6981</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>📍 Location</h4>
+                    <p>Abu Hamour, Doha, Qatar</p>
+                </div>
+                <div class="contact-item">
+                    <h4>🔗 LinkedIn</h4>
+                    <p><a href="https://linkedin.com/in/eleazaracampo" target="_blank">linkedin.com/in/eleazaracampo</a></p>
+                </div>
+            </div>
+
+            <p style="margin-top: 50px; color: #999; font-size: 14px;">Available for interviews and professional opportunities in Qatar and internationally</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Eleazar Campo. All rights reserved. | Head Chef | Pan-Asian Culinary Expert</p>
+        <p style="margin-top: 10px; font-size: 13px;">Last Updated: December 7, 2025</p>
+    </footer>
+</body>
+</html>
